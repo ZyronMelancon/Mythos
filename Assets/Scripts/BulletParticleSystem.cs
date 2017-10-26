@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class BulletParticleSystem : MonoBehaviour {
 
-    public ParticleSystem trail;
+    public ParticleSystem Trail;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
 	// Update is called once per frame
 	void Update ()
     {
-		
+        
 	}
+
+    //private void destroyParticle()
+    //{
+    //    Destroy(Trail, 1);
+    //}
 
     private void OnDestroy()
     {
-        trail.transform.parent = null;
+        Trail.transform.parent = null;
     }
 }

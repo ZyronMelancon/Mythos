@@ -7,6 +7,7 @@ public class CannonShoot : MonoBehaviour
     public GameObject bulletPrefab;
     public float bulletSpeed = 20;
     public float bulletDestroyTime = 5;
+    public ParticleSystem trail;
 
     void OnShoot()
     {
@@ -23,6 +24,7 @@ public class CannonShoot : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
             OnShoot();
+
 	}
 
     IEnumerator DestroyBullet(Object bullet)

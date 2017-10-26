@@ -624,6 +624,7 @@ MonoBehaviour:
     type: 2}
   bulletSpeed: 250
   bulletDestroyTime: 5
+  trail: {fileID: 0}
 --- !u!1 &1894857919
 GameObject:
   m_ObjectHideFlags: 0
