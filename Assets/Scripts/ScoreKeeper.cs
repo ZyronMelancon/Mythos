@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreKeeper : MonoBehaviour {
 
@@ -9,17 +10,19 @@ public class ScoreKeeper : MonoBehaviour {
     public int score = 0;
     public Text healthText;
     public Text scoreText;
-
+    public GameObject canvas;
 
 
 	// Use this for initialization
-	void Start () {
-		
-	}
+	void Start ()
+    {
+        Time.timeScale = 1;
+    }
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update ()
+    {
+
 	}
 
     public void scoreUp(int points)
@@ -32,5 +35,20 @@ public class ScoreKeeper : MonoBehaviour {
     {
         health -= num;
         healthText.text = health.ToString();
+        if (health <= 0)
+        {
+            canvas.active = true;
+            Time.timeScale = 0;
+        }
+    }
+
+    public void retry()
+    {
+        SceneManager.LoadScene("MainGame");
+    }
+
+    public void exit()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
